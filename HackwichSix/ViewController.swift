@@ -11,25 +11,23 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     var myFriendsArray = ["Ati","Leah","Brenna","Summer"]
-    var myTravelArray = ["Cali","Texas","Las Vegas"]
+    var myTravelArray = ["Cali","Texas","Las Vegas","Hawaii"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // myFriendsArray.count
-        myTravelArray.count
+       myFriendsArray.count
+        //myTravelArray.count
     }
     
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
-        let text = myTravelArray[indexPath.row]
+        let text = myFriendsArray[indexPath.row]
         cell?.textLabel?.text = text
+        cell?.detailTextLabel?.text = myFriendsArray[indexPath.row]
         return cell!
         
-        
+       
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
