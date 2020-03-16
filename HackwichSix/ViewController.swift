@@ -19,8 +19,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
+ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+ return UITableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
         let text = myFriendsArray[indexPath.row]
         cell?.textLabel?.text = text
         cell?.detailTextLabel?.text = myFriendsArray[indexPath.row]
