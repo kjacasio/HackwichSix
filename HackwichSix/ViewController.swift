@@ -14,17 +14,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var myTravelArray = ["Cali","Texas","Las Vegas","Hawaii"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       myFriendsArray.count
-        //myTravelArray.count
+       //myFriendsArray.count
+        return myTravelArray.count
     }
     
     
- func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
- return UITableViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
         let text = myFriendsArray[indexPath.row]
         cell?.textLabel?.text = text
-        cell?.detailTextLabel?.text = myFriendsArray[indexPath.row]
+        cell?.detailTextLabel?.text = myTravelArray[indexPath.row]
         return cell!
         
        
